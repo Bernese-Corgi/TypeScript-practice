@@ -125,7 +125,9 @@ function add(a, b) {
 }
 
 var sum = add(1, 2);
-console.log(sum);
+console.log(sum); // 3
+// const error: string = add(1, 2);
+// console.log(error); // 코드 작성 시점에서 에러
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -154,7 +156,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52380" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62784" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

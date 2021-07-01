@@ -1,0 +1,40 @@
+function add(a, b) {
+  return a + b;
+}
+const sum = add(1, 2);
+console.log(sum);
+// 3
+// const error: string = add(1, 2);
+// console.log(error); // 코드 작성 시점에서 에러
+// 타입 선언
+// 불리언 Boolean : true or false
+let isBoolean;
+let isDone = false;
+// 숫자 Number : 모든 부동 소수점 값 사용 가능.
+// ES6에서 도입된 2진수 및 8진수 리터럴도 지원한다.
+let num;
+let integer = 6;
+let float = 3.14;
+let hex = 0xf00d;
+// 61453
+let binary = 0b1010;
+// 10
+let octal = 0o744;
+// 484
+let infinity = Infinity;
+let nan = NaN;
+// 문자열 String : 작은따옴표 '', 큰따옴표 "", ES6 템플릿 문자열
+let str;
+let red = 'Red';
+let green = 'Green';
+let myColor = `My color is ${red}.`;
+let yourColor = 'Your color is' + green;
+// 배열 Array : 순차적으로 값을 가지는 일반 배열
+// 1. 문자열만 가지는 배열
+let strArray1 = ['one', 'two', 'three'];
+let strArray2 = ['one', 'two', 'three'];
+// 2. 숫자만 가지는 배열
+let numArray1 = [1, 2, 3];
+let numArray2 = [1, 2, 3];
+// 3. 유니언 타입 (다중 타입): 문자열과 숫자를 동시에 가지는 배열
+let unionArray1 = ['one', 2, 'three', 4, 'five'];
