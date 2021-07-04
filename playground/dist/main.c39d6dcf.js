@@ -118,7 +118,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.ts":[function(require,module,exports) {
-"use strict";
+"use strict"; // Types Basic
 
 function add(a, b) {
   return a + b;
@@ -128,6 +128,23 @@ var sum = add(1, 2);
 console.log(sum); // 3
 // const error: string = add(1, 2);
 // console.log(error); // 코드 작성 시점에서 에러
+// Enum
+
+var Week;
+
+(function (Week) {
+  Week[Week["Sun"] = 0] = "Sun";
+  Week[Week["Mon"] = 1] = "Mon";
+  Week[Week["Tue"] = 2] = "Tue";
+  Week[Week["Wed"] = 3] = "Wed";
+  Week[Week["Thu"] = 4] = "Thu";
+  Week[Week["Fri"] = 5] = "Fri";
+  Week[Week["Sat"] = 6] = "Sat";
+})(Week || (Week = {}));
+
+console.log(Week.Mon); // 1
+
+console.log(Week.Tue); // 2
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -156,7 +173,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62784" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54091" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
