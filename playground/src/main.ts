@@ -35,3 +35,17 @@ enum Color {
 }
 console.log(Color.Red); // red
 console.log(Color['Green']); // green
+
+// Any
+let any: any = 123;
+any = 'Hello world';
+console.log(any); // Hello world
+
+any = {};
+console.log(any); // {}
+
+any = null;
+console.log(any); // null
+
+const list: any[] = [1, true, 'Anything!'];
+console.log(list); // [ 1, true, 'Anything!' ]
