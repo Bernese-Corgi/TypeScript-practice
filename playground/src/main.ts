@@ -49,3 +49,22 @@ console.log(any); // null
 
 const list: any[] = [1, true, 'Anything!'];
 console.log(list); // [ 1, true, 'Anything!' ]
+
+let anyObj: any = { x: 0 };
+anyObj.bar = 100;
+console.log(anyObj); // { x: 0, bar: 100 }
+anyObj = 'hello';
+console.log(anyObj); // 'hello'
+
+const n: number = anyObj;
+console.log(n, typeof n); // 'hello' string
+
+// unknown
+let any_: any = 123;
+let unknown: unknown = 123;
+
+let boolVal: boolean = any_; // any는 모든 타입에 할당할 수 있다.
+// let numberVal1: number = unknown; // unknown 형식은 number 형식에 할당할 수 없다
+let anyVal: any = unknown; // unknown 형식은 any 형식에 할당할 수 있다.
+// 타입 단언
+let numberVal2: number = unknown as number; // 타입을 단언하면 unknown 형식도 any 외의 값에 할당할 수 있다.
