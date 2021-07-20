@@ -68,3 +68,16 @@ let boolVal: boolean = any_; // any는 모든 타입에 할당할 수 있다.
 let anyVal: any = unknown; // unknown 형식은 any 형식에 할당할 수 있다.
 // 타입 단언
 let numberVal2: number = unknown as number; // 타입을 단언하면 unknown 형식도 any 외의 값에 할당할 수 있다.
+
+// union
+function printId(id: number | string) {
+  console.log('Your ID is:' + id);
+}
+
+printId(101); // Your ID is:101
+printId('202');
+// printId({ myId: 1234 }); // Error - ts(2345)
+
+function unionError(member: number | string) {
+  // console.log(member.toUpperCase()); // 'string | number' 형식에 'toUpperCase' 속성이 없습니다. 'number' 형식에 'toUpperCase' 속성이 없습니다.ts(2339)
+}
