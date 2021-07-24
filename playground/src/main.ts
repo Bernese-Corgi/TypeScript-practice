@@ -104,3 +104,7 @@ draw({ color: 'blue', radius: 42 });
 // 에러
 // draw({ color: "red", raidus: 42 }); // '{ color: string; raidus: number; }' 형식의 인수는 'Colorful & Circle' 형식의 매개 변수에 할당될 수 없습니다.
 // 객체 리터럴은 알려진 속성만 지정할 수 있지만 'Colorful & Circle' 형식에 'raidus'이(가) 없습니다. 'radius'을(를) 쓰려고 했습니까?ts(2345)
+
+// Type Infernce
+let hellworld = 'Hello World';
+// hellworld = 0; // 'number' 형식은 'string' 형식에 할당할 수 없습니다.ts(2322)
