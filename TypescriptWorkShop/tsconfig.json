@@ -1,0 +1,21 @@
+// tsconfig.json 설정 파일은 대체로 프로젝트에 최상단 폴더에 위치시킨다.
+{
+  // 타입스크립트 컴파일러에 포함될 파일들을 include 프로퍼티 내에 작성
+  "include": [
+    // src폴더 하위의 모든 .ts 확장자를 가진 파일을 포함
+    "src/**/*.ts"
+  ],
+  // 타입스크립트 컴파일러에 제외될 파일들을 exclude 프로퍼티 내에 작성
+  "exclude": ["node_modules"],
+  // 실제 컴파일할 경우 적용되는 옵션들
+  "compilerOptions": {
+    // 어떤 모듈 시스템을 사용할지 결정
+    "module": "es6",
+    // 입력 파일의 루트 폴더
+    "rootDir": "src",
+    // 컴파일 후 생성되는 js파일이 생성될 폴더명
+    "outDir": "dist",
+    // ECMAScript 대상 버전 지정
+    "target": "es6"
+  }
+}
