@@ -12,8 +12,8 @@
     "rootDir": "src" /* 입력 파일의 루트 폴더 */,
     "outDir": "dist" /* 컴파일 후 생성되는 js파일이 생성될 폴더명 */,
     "target": "es6" /* ECMAScript 대상 버전 지정 */,
-    "sourceMap": true /* 소스맵 '.map' 파일 생성 설정 */
-    // "removeComments": true /* 출력 시, 주석 제거 설정 */
+    "sourceMap": true /* 소스맵 '.map' 파일 생성 설정 */,
+    "removeComments": true /* 출력 시, 주석 제거 설정 */
     // "noImplicitAny": true /* 명시적이지 않은 'any' 유형으로 표현식 및 선언 사용 시 오류 발생 */
   }
 }
