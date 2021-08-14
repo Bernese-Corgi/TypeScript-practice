@@ -2,9 +2,10 @@
 
 - [React With Typescript](#react-with-typescript)
   - [Create React App 프로젝트 with Typescript](#create-react-app-프로젝트-with-typescript)
-    - [React.FC](#reactfc)
-      - [장점](#장점)
-      - [단점](#단점)
+  - [React.FC](#reactfc)
+    - [장점](#장점)
+    - [단점](#단점)
+  - [optional props 지정 방법](#optional-props-지정-방법)
 
 ## Create React App 프로젝트 with Typescript
 
@@ -16,7 +17,7 @@ $ npx create-react-app my-app --template typescript
 
 [참고 사이트](https://create-react-app.dev/docs/adding-typescript/)
 
-### React.FC
+## React.FC
 
 ```tsx
 const Greetings: React.FC<GreetingsProps> /* props의 타입을 Generics로 넣어서 사용 */ = ({
@@ -24,7 +25,7 @@ const Greetings: React.FC<GreetingsProps> /* props의 타입을 Generics로 넣�
 }) => <div>Hello, {name}</div>;
 ```
 
-#### 장점
+### 장점
 
 `React.FC` 를 사용할 때는 `props`의 타입을 `Generics` 로 넣어서 사용한다.
 이렇게 React.FC를 사용해서 얻을 수 있는 이점은 두가지가 있습니다.
@@ -34,7 +35,7 @@ const Greetings: React.FC<GreetingsProps> /* props의 타입을 Generics로 넣�
 
 2. 컴포넌트의 defaultProps, propTypes, contextTypes 를 설정 할 때 자동완성이 될 수 있다
 
-#### 단점
+### 단점
 
 1. defaultProps가 제대로 동작하지 않는다.
 
@@ -75,5 +76,30 @@ function Greetings(
 Greetings.defaultProps = {
   mark: '!',
 };
+```
+
+## optional props 지정 방법
+
+props가 선택적으로 전달된다면, `?:` 를 사용하면 된다.
+
+🔻 컴포넌트 props 타입 별칭
+
+```tsx
+type CompProps = {
+  optional?: string;
+};
+```
+
+🔻 컴포넌트에 선택적인 props가 전달되면, 전달된 props를 표시한다.
+
+```tsx
+function Comp({ optional }: CompProps) {
+  return (
+    <div>
+      {/* optional props가 존재하면 p태그 내에 props를 표시한다. */}
+      {optional && <p>{optional}</p>}
+    </div>
+  );
+}
 ```
 
