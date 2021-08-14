@@ -6,6 +6,7 @@
     - [장점](#장점)
     - [단점](#단점)
   - [optional props 지정 방법](#optional-props-지정-방법)
+  - [이벤트 함수 처리](#이벤트-함수-처리)
 
 ## Create React App 프로젝트 with Typescript
 
@@ -103,3 +104,69 @@ function Comp({ optional }: CompProps) {
 }
 ```
 
+## 이벤트 함수 처리
+
+🔻 App.tsx : onClick 함수를 정의하고, 하위 컴포넌트에 props로 함수를 전달한다.
+
+```tsx
+import React from 'react';
+import Comp from './Comp';
+import Greetings from './Greetings';
+
+const App: React.FC = () => {
+  // onClick 함수 정의 : 콘솔에 클릭 상태를 출력하는 행위 정의
+  const onClick = (name: string) => {
+    console.log(`Click ${name}`);
+  };
+
+  return (
+    <div>
+      {/* Comp 컴포넌트에 onClick 함수 전달 */}
+      <Comp name="Comp" onClick={onClick} />
+    </div>
+  );
+};
+
+export default App;
+```
+
+🔻 Comp.tsx : props로 전달받은 콜백 함수를 onClick 이벤트에서 화살표 함수로 호출한다.
+
+```tsx
+import React from 'react';
+
+type CompProps = {
+  name: string;
+  onClick: (name: string) => void;
+};
+
+const Comp = ({ name, onClick /* 매개변수로 콜백 함수 전달 */ }: CompProps) => {
+  return (
+    <div>
+      <button onClick={() => onClick(name)/* 전달된 콜백함수를 화살표 함수로 호출 */}>
+        {name} button
+      </button>
+    </div>
+  );
+};
+
+export default Comp;
+```
+
+또는
+
+🔻 Comp.tsx : handleClick 변수에 콜백함수 호출문을 담아서 onClick 이벤트에 전달한다.
+
+```tsx
+const Comp = ({ name, onClick }: CompProps) => {
+  const handleClick = () => onClick(name);
+  
+  return (
+    <div>
+      <button onClick={handleClick}>{name}</button>
+    </div>
+  );
+};
+```
+
+![](https://user-images.githubusercontent.com/72931773/129443191-cdfa09bf-5d90-4570-aa38-83a9fbfbb98f.gif)
