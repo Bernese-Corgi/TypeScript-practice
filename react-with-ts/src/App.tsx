@@ -1,5 +1,6 @@
 import React from 'react';
-import CounterR from './CounterR';
+import ReducerSample from './ReducerSample';
+// import CounterR from './CounterR';
 // import CounterS from './CounterS';
 // import Greetings from './Greetings';
 // import MyForm from './MyForm';
@@ -21,7 +22,8 @@ const App: React.FC = () => {
       {/* <Greetings name="React" onClick={onClick} /> */}
       {/* <CounterS /> */}
       {/* <MyForm onSubmit={onSubmit} /> */}
-      <CounterR />
+      {/* <CounterR /> */}
+      <ReducerSample />
     </div>
   );
 };
